@@ -1,0 +1,38 @@
+sing System;
+using System.Linq;
+
+namespace matheus {
+   
+	class Program
+	{
+		public static void Main(string[] args)
+		{
+			decimal[,] matriz = new decimal[2, 2];
+
+            matriz[0, 0] = 2.5m;
+            matriz[0, 1] = 3.5m;  
+            matriz[1, 0] = 4.5m;
+            matriz[1, 1] = 5.5m;
+
+            decimal soma = 0;
+            int quantidadeElementos = matriz.GetLength(0) * matriz.GetLength(1);  // Correção aqui
+
+            for (int i = 0; i < matriz.GetLength(0); i++)
+            {
+                for (int j = 0; j < matriz.GetLength(1); j++)
+                {
+                    soma += matriz[i, j];
+                }
+            }
+
+
+            decimal media = soma / quantidadeElementos;
+            Console.WriteLine("A média dos valores da matriz é: " + media);
+
+		
+
+            Console.ReadKey(true);	
+            
+		}	
+	}
+}
